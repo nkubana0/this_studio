@@ -25,7 +25,7 @@ def create_atari_env_single(env_name, seed=0, render_mode='human'):
         render_mode: Rendering mode ('human' for GUI, 'rgb_array' for recording)
     """
     # Create environment with rendering enabled
-    env = gym.make(env_name, render_mode=render_mode)
+    env = gym.make("ALE/Breakout-v5", render_mode=render_mode)
     env = gym.wrappers.RecordEpisodeStatistics(env)
     env = gym.wrappers.AtariPreprocessing(env, frame_skip=1)
     
